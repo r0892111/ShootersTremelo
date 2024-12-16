@@ -20,12 +20,14 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: ./shooters # Set working directory to "shooters"
 
       - name: Build Next.js project
         run: npm run build
+        working-directory: ./shooters # Build from "shooters"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
+          publish_dir: ./shooters/out # Deploy the "out" folder from "shooters"
