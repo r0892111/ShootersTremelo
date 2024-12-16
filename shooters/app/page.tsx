@@ -3,19 +3,26 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+// Replace with your GitHub Pages repository name as basePath
+const basePath = "/ShootersTremelo";
+
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentMenuSlide, setCurrentMenuSlide] = useState(0);
   const [fade, setFade] = useState(false);
 
+  // Static image paths with basePath prepended
   const images = [
-    "/images/1.jpg",
-    "/images/2.jpg",
-    "/images/3.jpg",
-    "/images/4.jpg",
+    `${basePath}/images/1.jpg`,
+    `${basePath}/images/2.jpg`,
+    `${basePath}/images/3.jpg`,
+    `${basePath}/images/4.jpg`,
   ];
 
-  const menu = ["/images/menu1.jpg", "/images/menu2.jpg"];
+  const menu = [
+    `${basePath}/images/menu1.jpg`,
+    `${basePath}/images/menu2.jpg`,
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -76,7 +83,14 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <header className="h-screen flex items-center justify-center bg-[url('/images/3.jpg')] bg-cover bg-center">
+      <header
+        className="h-screen flex items-center justify-center"
+        style={{
+          backgroundImage: `url('${basePath}/images/3.jpg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="bg-black bg-opacity-50 p-10 rounded text-center">
           <h2 className="text-4xl font-bold mb-4">Welkom bij Shooters Tremelo</h2>
           <p className="text-lg">Pool, Snooker en nog veel meer!</p>
@@ -147,55 +161,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact & Openingstijden Section */}
-      <section id="contact-openingsuren" className="py-16 bg-gray-900">
-        <div className="container mx-auto text-white">
-          <h2 className="text-3xl font-bold mb-8 text-center">Contact & Openingstijden</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Contact Section */}
-            <div className="text-center md:text-left pl-5">
-              <h3 className="text-2xl font-bold mb-4">Contacteer ons</h3>
-              <p className="mb-4">Schrieksebaan 55, Tremelo</p>
-              <p className="mb-4">Telefoon: +32 16 57 17 47</p>
-              <p>Email: Truyens.antonio@gmail.com</p>
-            </div>
-
-            {/* Openingstijden Section */}
-            <div className="text-center md:text-left">
-              <h3 className="text-2xl font-bold mb-4">Openingstijden</h3>
-              <div className="grid grid-cols-2 gap-1">
-                <div>
-                  <p className="font-semibold">Maandag</p>
-                  <p>Gesloten</p>
-                </div>
-                <div>
-                  <p className="font-semibold">Dinsdag</p>
-                  <p>09:00 – 00:00</p>
-                </div>
-                <div>
-                  <p className="font-semibold">Woensdag</p>
-                  <p>18:00 – 00:00</p>
-                </div>
-                <div>
-                  <p className="font-semibold">Donderdag</p>
-                  <p>15:00 – 00:00</p>
-                </div>
-                <div>
-                  <p className="font-semibold">Vrijdag</p>
-                  <p>15:00 – 01:00</p>
-                </div>
-                <div>
-                  <p className="font-semibold">Zaterdag</p>
-                  <p>15:00 – 01:00</p>
-                </div>
-                <div>
-                  <p className="font-semibold">Zondag</p>
-                  <p>15:00 – 23:00</p>
-                </div>
-              </div>
-              <p className="mt-4 text-sm text-gray-400">Updated ongeveer een maand geleden</p>
-            </div>
-          </div>
+      {/* Contact Section */}
+      <section id="contact" className="py-16 bg-gray-900 text-center">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold mb-8">Contact</h2>
+          <p>Schrieksebaan 55, Tremelo</p>
+          <p>Telefoon: +32 16 57 17 47</p>
+          <p>Email: Truyens.antonio@gmail.com</p>
         </div>
       </section>
 
