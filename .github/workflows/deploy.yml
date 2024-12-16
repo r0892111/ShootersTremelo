@@ -3,7 +3,7 @@ name: Deploy Next.js to GitHub Pages
 on:
   push:
     branches:
-      - main # Trigger on push to the main branch
+      - main
 
 jobs:
   deploy:
@@ -20,14 +20,14 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./shooters # Set working directory to "shooters"
+        working-directory: ./shooters
 
       - name: Build Next.js project
         run: npm run build
-        working-directory: ./shooters # Build from "shooters"
+        working-directory: ./shooters
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./shooters/out # Deploy the "out" folder from "shooters"
+          publish_dir: ./shooters/out
