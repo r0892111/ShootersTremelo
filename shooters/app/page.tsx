@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 
 
-// Replace with your GitHub Pages repository name as basePath
+// Replace with your GitHub Pages repository name as basePathghh
 const basePath = "/ShootersTremelo";
 
 export default function Home() {
