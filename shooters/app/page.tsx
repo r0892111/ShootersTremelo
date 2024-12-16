@@ -15,6 +15,7 @@ export default function Home() {
 
   // Static image paths with basePath prepended
   const images = [
+    
     `${basePath}/images/1.jpg`,
     `${basePath}/images/2.jpg`,
     `${basePath}/images/3.jpg`,
