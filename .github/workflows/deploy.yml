@@ -28,8 +28,10 @@ jobs:
 
       - name: Manually wrap output
         run: |
-          mkdir -p ./shooters/out/ShootersTremelo
-          mv ./shooters/out/* ./shooters/out/ShootersTremelo
+          if [ ! -d ./shooters/out/ShootersTremelo ]; then
+            mkdir -p ./shooters/out/ShootersTremelo
+            mv ./shooters/out/* ./shooters/out/ShootersTremelo
+          fi
         working-directory: ./shooters
 
       - name: Deploy to GitHub Pages
