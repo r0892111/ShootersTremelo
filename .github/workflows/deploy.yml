@@ -26,14 +26,6 @@ jobs:
         run: npm run build
         working-directory: ./shooters
 
-      - name: Manually wrap output
-        run: |
-          if [ ! -d ./shooters/out/ShootersTremelo ]; then
-            mkdir -p ./shooters/out/ShootersTremelo
-            mv ./shooters/out/* ./shooters/out/ShootersTremelo
-          fi
-        working-directory: ./shooters
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
