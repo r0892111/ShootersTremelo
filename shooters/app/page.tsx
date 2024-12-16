@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import '../public/output.css';
+
 
 
 // Replace with your GitHub Pages repository name as basePath
