@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // This replaces the need for `next export`
-  distDir: 'out',   // Output directory for static files
-  images: { unoptimized: true }, // Required for static exports
-  basePath: '/ShootersTremelo',  // Repo name for GitHub Pages
+  output: 'export', // Enables static export
+  distDir: 'out',   // Specifies output directory
+  images: { unoptimized: true }, // Required for static export
+  basePath: '/ShootersTremelo',  // Matches your GitHub Pages repo name
   assetPrefix: '/ShootersTremelo', // Prefix for static assets
 };
 
